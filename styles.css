@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-image: linear-gradient(to bottom right,rgb(49 46 129), black);
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    border: none;
+    background: none;
+}
+
+img {
+    cursor: pointer;
+}
+
+.navbar {
+    background-color: white;
+    /* filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1)); */
+    border: 2px solid rgb(226 232 240);
+    border-radius: 0px 0px 10px 10px;
+    border-top: none;
+    position: fixed;
+    top: 0;
+    left: 10%;
+    right: 10%;
+    /* width: 100vw; */
+    z-index: 100;
+}
+
+
+.primary, .secondary {
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(49 46 129);
+    border-radius: 5px;
+    cursor: pointer;
+    /* margin: 2px 6px; */
+}
+
+.primary {
+    background-color: rgb(49 46 129);
+    color: white;
+    padding: 5px 1px;
+}
+.secondary {
+    padding: 5px 10px;
+    border-width: 2px;
+}
+    
+.primary:hover, .secondary:hover {
+    filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+}
+
+.text-large {
+    font-size: 1.125rem; 
+    line-height: 1.75rem; 
+}
+
+.flex {
+    display: flex;
+    justify-content: end;
+    /* padding: 20px 20px; */
+    flex-direction: row;
+}
+
+.justify-space-between {
+    justify-content: space-between;
+}
+
+.flex-row-reverse {
+    flex-direction: row-reverse;
+}
+
+.nav-items {
+    margin: auto 0px;
+}
+
+.nav-item {
+    border-radius: 10px;
+    align-items: center;
+    padding: 10px;
+    font-size: large;
+    margin: 2px 12px;
+}
+.nav-item:hover {
+    background-color: rgb(243 244 246);
+    cursor: pointer;
+}
+
+/* Login Page */
+.box {
+    margin: 50px auto;
+    border-radius: 0px 20px 0px 20px;
+    width: 30%;
+    border: 2px solid rgb(203 213 225);
+    z-index: 999;
+    background-color: white;
+}
+
+.container {
+    padding: 50px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.next-btn {
+    display: flex;
+    align-items: center;
+    font-size: large;
+    padding: 5px 10px;
+}
+
+.back-btn {
+    font-size: large;
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    /* padding: 5px 10px; */
+}
+
+.next-btn:hover {
+    background-color: white;
+    border: 2px solid rgb(49 46 129);
+    color: black;
+    transition-delay: 100ms;
+}
+
+.margin-left-2 {
+    margin-left: 2px;
+}
+
+.margin-left-5 {
+    margin-left: 5px;
+}
+
+.heading {
+    font-size: xx-large;
+}
+
+#button-container {
+    margin-top: 180px;
+}
+
+.register {
+    font-size: medium;
+    padding-top: 15px;  
+    margin-top: 20px;
+    border-top: 1px solid rgb(203 213 225);
+}
+
+.link {
+    color:rgb(49 46 129);
+    cursor: pointer;
+}
+
+.relative {
+    position: relative;
+}
+
+
+/* Login  */
+#username, #password {
+    margin-top: 50px;
+    margin-bottom: 15px;
+    border: 1px solid rgb(203 213 225);
+    border-radius: 5px;
+    padding: 10px;
+    font-size: large;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#password {
+    transform: translate(110%, 0%); 
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#username:focus, #password:focus {
+    outline: 1px solid black;
+}
+
+.move-out {
+    animation-name: move-out;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.move-reverse {
+    animation-direction: reverse;
+}
+
+.animation-delay {
+    animation-delay: 500ms;
+}
+
+.move-in {
+    animation-name: move-in;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes move-out {
+    0% {transform: translate(0%, 0%); opacity: 1;}
+    17% { opacity: 0; display: none;}
+    100% {transform: translate(-500%, -0%); opacity: 0;}
+}
+
+@keyframes move-in {
+    0% {transform: translate(500%, 0%); opacity: 0;}
+    83% {opacity: 0; display: none;}
+    100% {transform: translate(-0%, -0%); opacity: 1;}
+}
