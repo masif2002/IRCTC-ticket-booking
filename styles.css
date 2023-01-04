@@ -9,6 +9,8 @@
 body {
     font-family: 'Poppins', sans-serif;
     background-image: linear-gradient(to bottom right,rgb(49 46 129), black);
+    background-repeat: repeat;
+    height: 100vh;
 }
 
 a {
@@ -173,6 +175,49 @@ img {
 }
 
 
+
+.move-out-left {
+    animation-name: move-out-left;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.move-in-right {
+    animation-name: move-in-right;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.move-reverse {
+    animation-direction: reverse;
+}
+
+.animation-delay {
+    animation-delay: 500ms;
+}
+
+.move-in-left {
+    animation-name: move-in-left;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.move-out-right {
+    animation-name: mov;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.shake {
+    animation: shake;
+    animation-duration: 300ms;
+    animation-timing-function: linear;
+}
+
 /* Login  */
 #username, #password {
     margin-top: 50px;
@@ -186,7 +231,7 @@ img {
 }
 
 #password {
-    transform: translate(110%, 0%); 
+    transform: translate(500%, 0%); 
     position: absolute;
     top: 0;
     left: 0;
@@ -196,36 +241,42 @@ img {
     outline: 1px solid black;
 }
 
-.move-out {
-    animation-name: move-out;
-    animation-duration: 1s;
-    animation-timing-function: ease-in-out;
-    animation-fill-mode: forwards;
+#status {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
 }
 
-.move-reverse {
-    animation-direction: reverse;
-}
-
-.animation-delay {
-    animation-delay: 500ms;
-}
-
-.move-in {
-    animation-name: move-in;
-    animation-duration: 0.5s;
-    animation-timing-function: ease-in-out;
-    animation-fill-mode: forwards;
-}
-
-@keyframes move-out {
+@keyframes move-out-left {
     0% {transform: translate(0%, 0%); opacity: 1;}
     17% { opacity: 0; display: none;}
     100% {transform: translate(-500%, -0%); opacity: 0;}
 }
 
-@keyframes move-in {
+@keyframes move-in-right {
+    0% {transform: translate(-500%, 0%); opacity: 0;}
+    83% { opacity: 0; display: static;}
+    100% {transform: translate(-0%, -0%); opacity: 1;}
+}
+
+@keyframes move-in-left {
     0% {transform: translate(500%, 0%); opacity: 0;}
     83% {opacity: 0; display: none;}
     100% {transform: translate(-0%, -0%); opacity: 1;}
+}
+
+@keyframes mov {
+    0% {transform: translate(0%, 0%); opacity: 1;}
+    17% {opacity: 0; display: none;}
+    100% {transform: translate(500%, 0%); opacity: 0;}
+}
+
+@keyframes shake {
+    /* height: 100vw; */
+    0% {transform: translate(0%, 0%);}
+    20% {transform: translate(-5%, 0%);}
+    40% {transform: translate(5%, 0%);}
+    60% {transform: translate(-5%, 0%);}
+    80% {transform: translate(5%, 0%);}
+    100% {transform: translate(0%, 0%);}
 }

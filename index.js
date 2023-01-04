@@ -12,10 +12,11 @@ const nextPage = () => {
 const prevPage = () => {
     console.log('Hi')
 
-    document.getElementById('password').classList.add('move-reverse')
-    document.getElementById('password').classList.add('animation-delay')
-    document.getElementById('username').classList.add('animation-delay')
-    document.getElementById('username').classList.add('move-reverse')
+    document.getElementById('username').classList.remove('move-out-left')
+    document.getElementById('username').classList.remove('move-in-right')
+    document.getElementById('username').classList.add('move-in-right')
+    document.getElementById('password').classList.remove('move-in-left')
+    document.getElementById('password').classList.add('move-out-right')
 
     // Remove Back Button
     const back = document.getElementById('Back')
@@ -38,17 +39,28 @@ const removeUsernameField = () => {
 }
 
 const addMoveOutTransitionEffect = () => {
-    document.getElementById('username').classList.remove('move-out')
-    document.getElementById('username').classList.remove('move-reverse')
-    document.getElementById('username').classList.add('move-out')
+    // document.getElementById('username').classList.remove('move-out-left')
+    // document.getElementById('username').classList.remove('animation-delay')
+    // document.getElementById('username').classList.remove('move-reverse')
+    document.getElementById('username').classList.remove('move-in-right')
+    document.getElementById('username').classList.add('move-out-left')
+
+
     // console.log(document.getElementById('username').classList)
 }
 
 const addMoveInTransitionEffect = () => {
-    document.getElementById('password').classList.add('move-in')
+    document.getElementById('password').classList.remove('move-out-right')
+    document.getElementById('password').classList.remove('move-in-left')
+    document.getElementById('password').classList.add('move-in-left')
 }
 
 const addPasswordField = () => {
+
+    if (document.getElementById('password')) {
+        console.log("Element already exists")
+        return
+    }
     const password = document.createElement('input')
     password.type = 'password';
     password.name = "password";
@@ -56,6 +68,7 @@ const addPasswordField = () => {
     password.placeholder = "Enter password";
     
     document.getElementById('credentials-form').appendChild(password)
+    
 }
 
 const addButton = (buttonType, pathForSvg) => {
@@ -109,11 +122,60 @@ const addSubmitButton = () => {
     button.id = "submit"
     button.type = "submit"
     button.value = "Submit"
-    button.setAttribute('form', 'credentials-form')
+    // button.setAttribute('form', 'credentials-form')
     button.innerHTML = 'Submit'
 
     document.getElementById('button-container').appendChild(button)
     document.getElementById('button-container').classList.add('justify-space-between')
 }
 
+const sendFormData = () => {
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "http://127.0.0.1:5000/user/login"); 
+
+    // This fires up when the connection is successful
+    xhr.onload = function(event){ 
+        // alert("Success, server responded with: " + event.target.response);
+        localStorage.clear() 
+        localStorage.setItem('response', xhr.response)
+        displayStatus()
+    }; 
+
+    var formData = new FormData(document.getElementById("credentials-form")); 
+    xhr.send(formData);
+}
+
+const displayStatus = () => {
+    const res = localStorage.getItem('response')
+    const status = JSON.parse(res).status
+
+    if (document.getElementById('status')) {
+        const displayMessage = document.getElementById('status')
+        displayMessage.parentNode.removeChild(displayMessage)
+    }
+        const newNode = document.createElement('p')
+        newNode.id = 'status'
+        newNode.classList.add('shake') 
+    
+        const displayText = document.createTextNode(status)
+        newNode.appendChild(displayText)
+    
+        const buttons = document.getElementById('button-container')   
+        const parent = buttons.parentNode
+    
+        parent.insertBefore(newNode, buttons)
+
+}
+
 document.getElementById('Next').addEventListener('click', nextPage)
+
+
+// This is because the normal event listener gets clicked automatically from the Next button because they are in the same position. Cannot use "document.getElementById('submit').addEventListener('click', sendFormData())"
+document.addEventListener( "click", someListener );
+
+function someListener(event){
+    var element = event.target;
+    if(element.id == 'submit' && element.type == "submit"){
+        sendFormData()
+    }
+}
