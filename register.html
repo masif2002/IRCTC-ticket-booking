@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Register</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="register.css"/>
+    </head>
+    <body>
+        <section class="register-background">
+            <div class="register-box">
+                <div class="container" id="register-container">
+                    <header class="header">
+                        <h1 class="heading">Sign Up</h1>
+                        <!-- 
+                        Username
+                        Password
+                        Confirm Password
+                         -->
+                        <a href="../auth/login.html">
+                            <img src="../img/logo.png" alt="logo" height="50px" class="cursor-pointer">
+                        </a>
+                    </header>
+
+                    <form class="relative" id="signup-form">
+                        <div class="flex-column">
+                            <h3>First Name</h3>
+                            <input type="text" name="firstName" id="firstName" placeholder="Enter first name" />
+                        </div>
+
+                        <div class="flex-column">
+                            <h3>Last Name</h3>
+                            <input type="text" name="lastName" id="lastName" placeholder="Enter last name" class="field"/>
+                        </div>
+
+                        <div class="flex-column">
+                            <h3>Date Of Birth</h3>
+                            <input type="date" name="dob" id="dob" class="field" />
+                        </div>
+                        
+                        <div class="flex-column">
+                            <h3>Email</h3>
+                            <input type="email" name="email" id="email" placeholder="Enter email" class="field"/>
+                        </div>
+
+                        <div class="flex-column">
+                            <h3>Username</h3>
+                            <input type="text" name="username" id="username" placeholder="Enter username" class="field"/>
+                        </div>
+
+                        <div class="flex-column">
+                            <h3>Password</h3>
+                            <input type="password" name="password" id="password" placeholder="Enter password" class="field"/>
+                        </div>
+
+                        <div class="flex-column">
+                            <h3>Confirm Password</h3>
+                            <input type="password" name="re-password" id="re-password" placeholder="Confirm password" class="field"/>
+                        </div>
+
+                        <div class="flex-column">
+                            <h3>User Type</h3>
+                            
+                            <div class="radio-container">
+                                <div>
+                                    <input type="radio" name="userType" id="user" value="user"/>
+                                    <label for="user" >User</label>
+                                </div>
+    
+                                <div>
+                                    <input type="radio" name="userType" id="admin" value="admin" />
+                                    <label for="admin">Admin</label>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                    <div class="flex" id="btn">
+                        <button class="primary" name="submit" id="submit">
+                            Submit
+                        </button>
+                    </div>
+                    
+                </div>
+                    <p class="register">Already have an account?  
+                        <a class="link margin-left-5" href="./login.html">Sign In</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        
+        <script src="register.js" type="module"></script>
+    </body>
+</html>
