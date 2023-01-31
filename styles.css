@@ -8,9 +8,13 @@
 
 body {
     font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+
     background-image: linear-gradient(to bottom right,rgb(49 46 129), black);
-    background-repeat: repeat;
+    background-size: cover;
+    background-repeat: no-repeat;
     height: 100vh;
+    padding: 10px 0px;
 }
 
 a {
@@ -22,8 +26,27 @@ button {
     background: none;
 }
 
-img {
-    cursor: pointer;
+.home-container {
+    overflow: hidden;
+    /* background: #000; */
+    height: 100vh;
+}
+
+.home-background {
+    width: 100vw;
+    height: 100%;
+    z-index: -1;
+    /* object-fit: fill; */
+}
+
+.login-background {
+}
+
+.padding-x-10{
+    padding-right: 10px;
+} 
+.padding-y-5{
+    padding: 0px 5px;
 }
 
 .navbar {
@@ -34,10 +57,26 @@ img {
     border-top: none;
     position: fixed;
     top: 0;
-    left: 10%;
-    right: 10%;
-    /* width: 100vw; */
+    left: 25%;
+    right: 25%;
     z-index: 100;
+    
+    padding: 10px 0px;
+    display: flex;
+    justify-content: center;
+    column-gap: 10px;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 5px;
+    margin-top: 10px;
+}
+
+.cursor-pointer {
+    cursor: pointer;
 }
 
 
@@ -53,14 +92,21 @@ img {
 .primary {
     background-color: rgb(49 46 129);
     color: white;
-    padding: 5px 1px;
+    padding: 5px 22px;
 }
 .secondary {
     padding: 5px 10px;
     border-width: 2px;
 }
+
+.primary:hover {
+    background-color: white;
+    border: 2px solid rgb(49 46 129);
+    color: black;
+    transition-delay: 100ms;
+}
     
-.primary:hover, .secondary:hover {
+.secondary:hover {
     filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
 }
 
@@ -102,12 +148,17 @@ img {
 
 /* Login Page */
 .box {
-    margin: 50px auto;
+    margin: 25px auto;
     border-radius: 0px 20px 0px 20px;
     width: 30%;
+    /* height: 100%; */
     border: 2px solid rgb(203 213 225);
     z-index: 999;
     background-color: white;
+}
+
+.z8{
+    z-index: 999;
 }
 
 .container {
@@ -247,6 +298,11 @@ img {
     margin-top: 10px;
 }
 
+#train-image {
+    height: 100%;
+    width: 100%;
+}
+
 @keyframes move-out-left {
     0% {transform: translate(0%, 0%); opacity: 1;}
     17% { opacity: 0; display: none;}
@@ -280,3 +336,4 @@ img {
     80% {transform: translate(5%, 0%);}
     100% {transform: translate(0%, 0%);}
 }
+

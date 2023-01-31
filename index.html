@@ -6,27 +6,140 @@
         <title>IRCTC</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="test.css">
+        <!-- icons -->
+        <script src="https://kit.fontawesome.com/007840b8b8.js" crossorigin="anonymous"></script>
     </head>
     <body>
+    	<!-- navbar -->
         <nav class="navbar">
-            <div class="flex">
-                <img src="img/logo.png" alt="app-logo" height="75px">
-                <div class="flex nav-items">
-                    <p class="nav-item">Check Status</p>
-                    <p class="nav-item">Book Train</p>
-                    <p class="nav-item">Cancel Train</p>
+            <!-- <div class="flex"> -->
+                
+                <div class="nav-items">
+                    <img class="logo" src="img/logo.png" alt="app-logo" height="75px">
+                    <a class="item" href="pnr.html" id="token">Check Status</a>
+                    <a class="item" href="">Cancel Train</a>
+                    <a class="item" href="">Contact Us</a>
+                    <a class="login-btn btn" href="./auth/login.html">Login</a >
+                    <a class="register-btn btn"href="">Register</a>
                 </div>
-                <div class="nav-items"> 
-                    <a class="primary text-large" href="./auth/login.html">Login</a >
-                    <a class="secondary text-large">Register</a>
-                </div>
-            </div>
+    
         </nav>
 
 
+            <!-- pane -->
+            <div class="pane">
+                <form class="top-pane" action=""  method="post" >
+                
+                    <div class="top-left-pane">
+        
+                        <!-- From -->
+                        <div class="input-icons-container-1">
+                            <div class="icon">
+                                <i class="fa-solid fa-location-dot"></i> 
+                            </div>                                              
+                            <input class="input-field" type="text" id="From" name="From" placeholder="From">
+                        </div>
+                        
+                        <!-- switch icon -->
+                        <!-- <div class="switch-icon"> -->
+                            <img id="switch_inputs" class="switch-icon" src="img/swap.png"  alt="">
+                        <!-- </div> -->
+                    
+                        
+                        <!-- To -->
+                        <div class="input-icons-container-2">
+                            <div class="icon">
+                                <i class="fa-solid fa-location-arrow" ></i>
+                            </div>
+                            
+                            <input class="input-field" type="text" id="To" name="To" placeholder="To">
+                        </div>
+        
+                        <!-- Ticket Type -->
+                        <div class="input-icons-container-3">
+                            <div class="input-icon">
+                                <i class="fa-regular fa-user"></i>
+                            </div>                            
+                            <select class="select-container" name="TicketType" id="TicketType">
+                                <option value="General">General</option>
+                                <option value="Ladies">Ladies</option>
+                                <option value="Sr.Citizen">SR.Citizen</option>
+                                <option value="Differently Abled">Differently-Abled</option>
+                                <option value="Takal">Takal</option>
+                                <option value="Permium Takal">Permium Takal</option>
+                            </select>
+                        </div>
+                        
+                        
+                    </div>
+                        
+                    <div class="top-right-pane">
+                        <!-- Ticket Class -->
+                        <div class="input-icons-container-4">
+                            <div class="icon">
+                                <i class="fa-solid fa-bars"></i>
+                            </div>
+                            
+                            <select class="select-container" name="TicketClass" id="TicketClass">
+                                <option value="All Class">All Class</option>
+                                <option value="AC 1 Tier">AC 1 Tier (1A)</option>
+                                <option value="AC 2 Tier">AC 2 Tier (2A)</option>
+                                <option value="AC 3 Tier">AC 3 Tier (3A)</option>
+                                <option value="Sleeper">Sleeper (SL)</option>
+                                <option value="Second Sitting">Second Sitting (2S)</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Calender -->
+                        <div class="input-icons-container-5">
+                            <div class="calender-icon">
+                                <i class="fa-regular fa-calendar-check"></i>
+                            </div>
+                            
+                            <input class="select-date-container" type="date" id="datePickerId" name="date"/><br>
+                        </div>
 
-        <script src="index.js" type="module"></script>
+                        <!-- Available berth check box -->
+                        <div class="check-box">
+                            <input type="checkbox" id="AvailableTrain"  name="AvailableTrain" value="yes" checked=false>
+                            <label for="AvailableTrain">Train with Available Berth</label>
+                        </div>
+                    </div>      
+                    
+                </form>
+
+
+                <!-- search -->
+                <div class="search">                    
+                    <div class="search-btn">
+                        <i id="search-icon" class="fa-solid fa-magnifying-glass fa-l"></i>
+                        <p>Submit</p>
+                    </div>                    
+                </div>
+
+                
+        
+
+            </div>
+
+        
+        
+
+        
+
+            
+
+        <!-- </div> -->
+
+        <!-- login -->
+
+
+    
+
+        
+
+        <!-- <script src="index.js" type="module"></script> -->
     </body>
 </html>
 

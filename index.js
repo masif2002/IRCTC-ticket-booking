@@ -131,32 +131,44 @@ const addSubmitButton = () => {
 
 const sendFormData = () => {
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", "http://127.0.0.1:5000/user/login"); 
+    xhr.open("POST", "http://10.140.11.221:5000/user/login"); 
 
     // This fires up when the connection is successful
     xhr.onload = function(event){ 
         // alert("Success, server responded with: " + event.target.response);
         localStorage.clear() 
         localStorage.setItem('response', xhr.response)
-        displayStatus()
+        console.log(xhr.response)
+        // console.log(xhr.status)
+        displayStatus(xhr.status)
     }; 
 
     var formData = new FormData(document.getElementById("credentials-form")); 
     xhr.send(formData);
 }
 
-const displayStatus = () => {
+
+
+
+
+const displayStatus = (statusCode) => {
     const res = localStorage.getItem('response')
+    // console.log(response)
     const status = JSON.parse(res).status
 
     if (document.getElementById('status')) {
         const displayMessage = document.getElementById('status')
         displayMessage.parentNode.removeChild(displayMessage)
     }
+    
+    if (statusCode == 200) {
+        window.location.href = "/index.html"
+    } else {
         const newNode = document.createElement('p')
+        //     console.log(res)
         newNode.id = 'status'
         newNode.classList.add('shake') 
-    
+
         const displayText = document.createTextNode(status)
         newNode.appendChild(displayText)
     
@@ -164,6 +176,7 @@ const displayStatus = () => {
         const parent = buttons.parentNode
     
         parent.insertBefore(newNode, buttons)
+    }
 
 }
 
