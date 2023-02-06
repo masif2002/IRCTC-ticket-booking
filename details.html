@@ -32,11 +32,12 @@
 
         <section class="main">
             <div class="container">
-                <form action="" method="POST" >
-                    <div class="flex-column" id="passenger_details">
-
-                        <div class="flex-row">
-                            <label for="passsengers">Choose number of passengers</label>
+                <h1 class="heading">Passenger Details</h1>
+                <form action="">
+                  
+                    <div class="flex-column" id="cards">
+                        <div class="flex-row center">
+                            <label for="passengers">Choose number of passengers</label>
                             <select name="passengers" id="passengers" class="select">
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -46,32 +47,34 @@
                                 <option value="6">6</option>
                             </select>
                         </div>
-
-                        <div class="passenger_details">
-                            <h3 class="title">Passenger 1</h3>
-                            <div class="flex-row">
-                                <label for="name" class="name">Name</label>
-                                <input type="text" name="name" id="name" placeholder="Enter name">
-                            </div>
-                            <div class="flex-row">
-                                <label for="age" class="age">Age</label>
-                                <input type="text" name="age" id="age" placeholder="Enter age">
-                            </div>
-                            <div class="flex-row">
-                                <label for="gender">Gender</label>
-                                <select name="gender" id="gender">
-                                    <option value="Male">Male</option>
-                                    <option value="Female">Female</option>
-                                </select>
-                            </div>
-                            <div class="flex-row">
-                                <label for="mobile" class="mobile">Mobile</label>
-                                <input type="text" name="mobile" id="mobile" placeholder="Enter mobile number">
+                        
+                        <div class="flex center" id="passenger_details_container1">
+                            <div class="passenger_details" id="card1">
+                                <h3 class="title">Passenger 1</h3>
+                                <div class="flex-row">
+                                    <label for="name" class="name">Name</label>
+                                    <input type="text" name="name" id="name" placeholder="Enter name">
+                                </div>
+                                <div class="flex-row">
+                                    <label for="age" class="age">Age</label>
+                                    <input type="text" name="age" id="age" placeholder="Enter age">
+                                </div>
+                                <div class="flex-row">
+                                    <label for="gender">Gender</label>
+                                    <select name="gender" id="gender">
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                    </select>
+                                </div>
+                                
                             </div>
                         </div>
 
+                        <!-- <div class="flex-row" id="contact">
+                            <label for="mobile" class="mobile">Mobile</label>
+                            <input type="text" name="mobile" id="mobile" placeholder="Enter mobile number">
+                        </div> -->
                         <input type="submit" class="primary" id="submit-btn" value="Book Now">
-
                     </div>
 
                 </form>

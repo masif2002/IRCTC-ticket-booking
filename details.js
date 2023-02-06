@@ -6,33 +6,39 @@ const getValue = () => {
 
 const renderPassengerCards = () => {
 
-    const val = getValue()
     const fare = localStorage.getItem('fare')
+    var val = getValue()
 
-    removeExistingFields()
-
-    for (let i = 0; i < val; i++) {
-        createPassengerCard(i+1)
-    }
-
+    if (val > currentValue) {    
+        for (let i = currentValue; i < val; i++) {
+            createPassengerCard(Number(i)+1)
+        }
+    } else {
+        const toRemove = currentValue - val
+        removeCards(currentValue, val)
+    }   
+    currentValue = val
     updateFare(fare*val)
-
 }
 
-const removeExistingFields = () => {
-    for (let i=0; i<6; i++) {
-        const elem = document.querySelector('.passenger_details')
-        if (elem) {
-            elem.remove()
-        }
+const removeCards = (currentValue, val) => {
+    for (let i = currentValue; i > val; i--) {
+        document.getElementById(`passenger_details_container${i}`).remove()
     }
 }
 
 const createPassengerCard = (num) => {
 
     // Root node
+    const container = document.createElement('div')
+    container.classList.add('flex')
+    container.classList.add('center')
+    container.id = `passenger_details_container${num}`
+
     const div = document.createElement('div')
     div.classList.add('passenger_details')
+    div.id = `card${num}`
+    container.appendChild(div)
 
     // Title
     const title = document.createElement('h3')
@@ -109,28 +115,28 @@ const createPassengerCard = (num) => {
 
 
     // Mobile
-    const mobile = document.createElement('div')
-    mobile.classList.add('flex-row')
+    // const mobile = document.createElement('div')
+    // mobile.classList.add('flex-row')
 
-    label = document.createElement('label')
-    label.setAttribute('for', 'mobile')
-    label.textContent = "Mobile"
-    label.classList.add('mobile')
+    // label = document.createElement('label')
+    // label.setAttribute('for', 'mobile')
+    // label.textContent = "Mobile"
+    // label.classList.add('mobile')
 
-    input = document.createElement('input')
-    input.setAttribute('type', 'text')
-    input.setAttribute('name', 'mobile')
-    input.setAttribute('id', `mobile${num}`)
-    input.setAttribute('placeholder', 'Enter mobile number')
+    // input = document.createElement('input')
+    // input.setAttribute('type', 'text')
+    // input.setAttribute('name', 'mobile')
+    // input.setAttribute('id', `mobile${num}`)
+    // input.setAttribute('placeholder', 'Enter mobile number')
 
-    mobile.appendChild(label)
-    mobile.appendChild(input)
-    div.appendChild(mobile)
+    // mobile.appendChild(label)
+    // mobile.appendChild(input)
+    // div.appendChild(mobile)
 
     // Appending Root Node to Parent
-    const parent = document.getElementById('passenger_details')
+    const parent = document.getElementById('cards')
     const child = document.querySelector('.fare')
-    parent.insertBefore(div, child)
+    parent.insertBefore(container, child)
 }
 
 const intializeTotalFare = () => {
@@ -146,7 +152,7 @@ const intializeTotalFare = () => {
     rupee.textContent = '₹'
     div.appendChild(rupee)
 
-    const parent = document.getElementById('passenger_details')
+    const parent = document.getElementById('cards')
     const child = document.getElementById('submit-btn')
     parent.insertBefore(div, child)
 
@@ -166,6 +172,7 @@ const updateFare = (value) => {
     parent.appendChild(fare) 
 }
 
+var currentValue = 1;
 
 localStorage.setItem('fare', '220')
 intializeTotalFare()

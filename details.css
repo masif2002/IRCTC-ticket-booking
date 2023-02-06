@@ -120,6 +120,7 @@ input {
     background-color: white;
     padding: 50px;
     border-radius: 10px;
+    width: 500px;
 }
 
 .select {
@@ -169,6 +170,14 @@ input {
     border: 1px solid black;
     padding: 20px;
     border-radius: 2px;
+    width: 70%;
+}
+
+.flex {
+    display: flex;
+}
+.center {
+    justify-content: center;
 }
 
 .title {
@@ -188,4 +197,11 @@ input {
 
 .primary:hover {
     opacity: 90%;
+}
+
+.heading {
+    padding-bottom: 10px;
+    margin-bottom: 35px;
+    border-bottom: 1px solid rgb(203 213 225);
+    font-size: xx-large;
 }
