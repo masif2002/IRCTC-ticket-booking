@@ -6,7 +6,7 @@
         <title>IRCTC</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="test.css">
+        <link rel="stylesheet" href="home.css">
         <!-- icons -->
         <script src="https://kit.fontawesome.com/007840b8b8.js" crossorigin="anonymous"></script>
     </head>
@@ -17,11 +17,16 @@
                 
                 <div class="nav-items">
                     <img class="logo" src="img/logo.png" alt="app-logo" height="75px">
-                    <a class="item" href="pnr.html" id="token">Check Status</a>
-                    <a class="item" href="">Cancel Train</a>
-                    <a class="item" href="">Contact Us</a>
-                    <a class="login-btn btn" href="./auth/login.html">Login</a >
-                    <a class="register-btn btn"href="">Register</a>
+                    <div class="items">
+                        <a class="item" href="pnr.html">Check Status</a>
+                        <a class="item" href="">Cancel Train</a>
+                        <a class="item" href="">Contact Us</a>
+                    </div>
+                    <div class="nav-btn">
+                        <a class="login-btn btn" href="login.html">Login</a >
+                        <a class="register-btn btn" href="register.html">Register</a>
+                    </div>
+                    
                 </div>
     
         </nav>
@@ -38,14 +43,11 @@
                             <div class="icon">
                                 <i class="fa-solid fa-location-dot"></i> 
                             </div>                                              
-                            <input class="input-field" type="text" id="From" name="From" placeholder="From">
+                            <input class="input-field" type="text" id="From" name="From" placeholder="From" oninput="this.value = this.value.toUpperCase()">
                         </div>
                         
                         <!-- switch icon -->
-                        <!-- <div class="switch-icon"> -->
-                            <img id="switch_inputs" class="switch-icon" src="img/swap.png"  alt="">
-                        <!-- </div> -->
-                    
+                        <img id="switch_inputs" class="switch-icon" src="img/swap.png"  alt="">
                         
                         <!-- To -->
                         <div class="input-icons-container-2">
@@ -53,7 +55,7 @@
                                 <i class="fa-solid fa-location-arrow" ></i>
                             </div>
                             
-                            <input class="input-field" type="text" id="To" name="To" placeholder="To">
+                            <input class="input-field" type="text" id="To" name="To" placeholder="To" oninput="this.value = this.value.toUpperCase()">
                         </div>
         
                         <!-- Ticket Type -->
@@ -82,10 +84,10 @@
                             </div>
                             
                             <select class="select-container" name="TicketClass" id="TicketClass">
-                                <option value="All Class">All Class</option>
-                                <option value="AC 1 Tier">AC 1 Tier (1A)</option>
-                                <option value="AC 2 Tier">AC 2 Tier (2A)</option>
-                                <option value="AC 3 Tier">AC 3 Tier (3A)</option>
+                                <option value="all class">All Class</option>
+                                <option value="AC1 Tier">AC 1 Tier (1A)</option>
+                                <option value="AC2 Tier">AC 2 Tier (2A)</option>
+                                <option value="AC3 Tier">AC 3 Tier (3A)</option>
                                 <option value="Sleeper">Sleeper (SL)</option>
                                 <option value="Second Sitting">Second Sitting (2S)</option>
                             </select>
@@ -99,25 +101,34 @@
                             
                             <input class="select-date-container" type="date" id="datePickerId" name="date"/><br>
                         </div>
-
-                        <!-- Available berth check box -->
-                        <div class="check-box">
-                            <input type="checkbox" id="AvailableTrain"  name="AvailableTrain" value="yes" checked=false>
-                            <label for="AvailableTrain">Train with Available Berth</label>
-                        </div>
+                        
                     </div>      
                     
                 </form>
 
-
-                <!-- search -->
-                <div class="search">                    
-                    <div class="search-btn">
-                        <i id="search-icon" class="fa-solid fa-magnifying-glass fa-l"></i>
-                        <p>Submit</p>
-                    </div>                    
+                <!-- Available berth check box -->
+                <div class="check-box">
+                    <input type="checkbox" id="AvailableTrain"  name="AvailableTrain" value="yes" checked=false>
+                    <label for="AvailableTrain">Train with Available Berth</label>
                 </div>
 
+
+                <!-- search -->
+                <div id="search-contianer">
+                    <div id="search" class="search">                    
+                        <div class="search-btn">
+                            <i id="search-icon" class="fa-solid fa-magnifying-glass fa-l"></i>
+                            <p>Submit</p>
+                        </div>                    
+                    </div>
+                </div>
+                
+
+                <!--  -->
+                <div class="trains">
+
+                </div>
+                
                 
         
 
@@ -137,9 +148,9 @@
 
     
 
-        
 
-        <!-- <script src="index.js" type="module"></script> -->
+
+        <script src="scripts/index.js" type="module"></script>
     </body>
 </html>
 

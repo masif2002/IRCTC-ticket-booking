@@ -1,0 +1,393 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-image: linear-gradient(to bottom right,rgb(49 46 129), black);
+    background-repeat: no-repeat ;
+    background-size: cover;
+    height: 100vh;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    cursor: pointer;
+}
+
+/* HOME PAGE */
+.navbar 
+{
+    background-color: white;
+    border: 2px solid rgb(226 232 240);
+    border-radius: 0px 0px 20px 20px;
+    border-top: none;
+    position: fixed;
+    top: 0;
+    left: 10%;
+    right: 10%;
+    font-size: 1.125rem; 
+    line-height: 1.75rem;
+    z-index: 100;
+    padding: 15px 0px;
+    height: 70px;
+}
+.nav-items 
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: auto 0px;
+    align-items: center;
+}
+.logo
+{
+    margin-right: 60px;
+    margin-left: 60px;
+    display: flex;
+    justify-content: center;
+}
+.items
+{
+    justify-content: space-evenly;
+    display: flex;
+    width: 600px;
+
+}
+.item
+{
+    color: black;
+    
+}
+.item:hover {
+    border-bottom: 0px;
+    opacity: 75%;
+    cursor: pointer;
+}
+
+.btn
+{
+    background-color: rgb(49 46 129);
+    color: white;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(49 46 129);
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 1.125rem; 
+    line-height: 1.75rem;
+    height: 30px;
+} 
+.btn:hover{
+    opacity: 90%;
+}
+.nav-btn
+{
+    display: flex;
+    justify-content: space-evenly;
+    width: 200px;
+}
+.login-btn 
+{
+    width: 55px;
+    display: flex;
+    justify-content: center;
+    /* margin-left: 70px; */
+}
+.register-btn 
+{
+    
+    width: 85px;
+    display: flex;
+    justify-content: center;
+    /* margin-left: 30px; */
+}
+.search
+{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px ;
+    cursor: pointer;
+}
+.search-btn
+{
+    
+    background-color: rgb(49 46 129);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: flex;
+    column-gap: 10px;
+}
+.search-btn:hover 
+{
+    opacity: 90%;
+    border-bottom: 1px;
+}
+#search-icon {
+    padding-top: 4px;
+    height: 2px;
+}
+/* pane */
+.pane
+{
+    
+    background-color: white;
+    box-shadow: 0px 0px 50px 0px black;
+    height: 450px;
+    width: 600px;
+    margin-top: 150px;
+    margin-left: 340px;
+    background-image: none;
+    border-radius: 30px 30px 30px 30px;
+
+}
+.top-pane
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between 10px;
+    padding: 40px;
+    margin-top: -20px;
+}
+
+.input-field 
+{
+    height: 34px;
+    width: 180px;
+    margin-left: 10px;
+    padding-left: 25px;
+    border: 2px solid;
+    font-size: medium;
+
+}
+.select-container
+{
+    height: 38px ;
+    width: 209px;
+    margin-left: 10px;
+    padding-left: 25px;
+    border: 2px solid;
+    font-size: medium;
+}
+.input-icons-container-1
+{
+    width: 240px;
+    margin-left: 1px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    margin:0 auto;
+}
+.input-icons-container-2
+{
+    width: 240px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    margin:0 auto;
+}
+.input-icons-container-3
+{
+    width: 240px;
+    height: 28px;
+    padding: 10px;
+    padding-top: 30px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    margin:0 auto;
+}
+.input-icons-container-4
+{
+    width: 240px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    margin:0 auto;
+}
+.select-date-container
+{
+    height: 34px ;
+    width: 175px;
+    margin-left: 10px;
+    padding-left: 30px;
+    border: 2px solid;
+}
+.input-icons-container-5
+{
+    width: 240px;
+    padding: 10px;
+    padding-top: 36px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    margin:0 auto;
+}
+.check-box
+{
+    padding-left: 200px;
+    font-size:15px;
+}
+
+.icon
+{
+    position: absolute;
+    left:28px;
+    top: 16px;
+    color: black;
+}
+.switch-icon
+{
+    margin-left: 110px;
+    height: 20px;
+    width: 20px;
+}
+.input-icon
+{
+    position: absolute;
+    left:28px;
+    top: 36px;
+    color: black;
+}
+.calender-icon
+{
+    position: absolute;
+    left:28px;
+    top: 42px;
+    color: black;
+}
+.search-icon
+{
+
+    position: absolute;
+    left:25px;
+    color: white;
+    height: 10px;
+    width: 100px;
+    padding-top: 10px;
+
+}
+
+#status2 {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    color: red;
+
+}
+
+
+
+
+/* Login Page */
+.box {
+    margin: 50px auto;
+    border-radius: 0px 20px 0px 20px;
+    width: 30%;
+    border: 2px solid rgb(203 213 225);
+    z-index: 999;
+    background-color: white;
+}
+
+.container {
+    padding: 50px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.next-btn {
+    display: flex;
+    align-items: center;
+    font-size: large;
+    padding: 5px 10px;
+}
+
+.back-btn {
+    font-size: large;
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    /* padding: 5px 10px; */
+}
+
+.next-btn:hover {
+    background-color: white;
+    border: 2px solid rgb(49 46 129);
+    color: black;
+    transition-delay: 100ms;
+}
+
+.margin-left-2 {
+    margin-left: 2px;
+}
+
+.margin-left-5 {
+    margin-left: 5px;
+}
+
+.heading {
+    font-size: xx-large;
+}
+
+#button-container {
+    margin-top: 180px;
+}
+
+.register {
+    font-size: medium;
+    padding-top: 15px;  
+    margin-top: 20px;
+    border-top: 1px solid rgb(203 213 225);
+}
+
+.link {
+    color:rgb(49 46 129);
+    cursor: pointer;
+}
+
+.relative {
+    position: relative;
+}
+
+/* Login  */
+#username, #password {
+    margin-top: 50px;
+    margin-bottom: 15px;
+    border: 1px solid rgb(203 213 225);
+    border-radius: 5px;
+    padding: 10px;
+    font-size: large;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#password {
+    transform: translate(110%, 0%); 
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#username:focus, #password:focus {
+    outline: 1px solid black;
+}
+
+
+
+
+/* details page css */
