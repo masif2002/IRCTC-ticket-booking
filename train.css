@@ -1,0 +1,264 @@
+/* navbar things */
+
+/* HOME PAGE */
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-image: linear-gradient(to bottom right,rgb(49 46 129), black);    
+    background-repeat: no-repeat ;
+    background-size: cover;
+    /* height: 100vh; */
+}       
+
+a {
+    text-decoration: none;
+}
+
+img {
+    cursor: pointer;
+}
+.navbar 
+{
+    background-color: white;
+    border: 2px solid rgb(226 232 240);
+    border-radius: 0px 0px 20px 20px;
+    border-top: none;
+    position: fixed;
+    top: 0;
+    left: 10%;
+    right: 10%;
+    font-size: 1.125rem; 
+    line-height: 1.75rem;
+    z-index: 100;
+    padding: 15px 0px;
+    height: 70px;
+}
+.nav-items 
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: auto 0px;
+    align-items: center;
+}
+.logo
+{
+    margin-right: 60px;
+    margin-left: 60px;
+    display: flex;
+    justify-content: center;
+}
+.items
+{
+    justify-content: space-evenly;
+    display: flex;
+    width: 600px;
+
+}
+.item
+{
+    color: black;
+    
+}
+.item:hover {
+    border-bottom: 0px;
+    opacity: 75%;
+    cursor: pointer;
+}
+
+.btn
+{
+    background-color: rgb(49 46 129);
+    color: white;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(49 46 129);
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 1.125rem; 
+    line-height: 1.75rem;
+    height: 30px;
+} 
+.btn:hover{
+    opacity: 90%;
+}
+.nav-btn
+{
+    display: flex;
+    justify-content: space-evenly;
+    width: 200px;
+}
+.login-btn 
+{
+    width: 55px;
+    display: flex;
+    justify-content: center;
+    /* margin-left: 70px; */
+}
+.register-btn 
+{
+    
+    width: 85px;
+    display: flex;
+    justify-content: center;
+    /* margin-left: 30px; */
+}
+.search
+{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px ;
+    cursor: pointer;
+}
+.search-btn
+{
+    
+    background-color: rgb(49 46 129);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: flex;
+    column-gap: 10px;
+}
+.search-btn:hover 
+{
+    opacity: 90%;
+    border-bottom: 1px;
+}
+
+/* ends here */
+
+p
+{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.trains
+{
+    margin-top: 180px;
+    background-color: white;
+    padding: 10px;
+    width: 1000px;
+    margin-left: 135px;
+    border-radius: 10px;
+}
+.train
+{
+    border-color: black;
+    border-width: 2px;
+    border-radius: 10px;
+    border-style:solid;
+    width: 950px;
+    margin: 30px;
+    
+}
+/* .train2
+{  
+    margin-top: 100px;
+    box-shadow: 0px 0px 10px 0px black;
+} */
+.top
+{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(211,211,211);
+    border-radius: 10px;
+    height: 50px;
+    align-items: center;
+    font-size: larger;
+    font-weight: bolder;
+}
+.bottom
+{
+    display: flex;
+    background-color: white;
+    flex-direction: row;
+    justify-content:space-around;
+    height: 50px;
+    align-items: center;
+    font-weight:normal;
+    font-size: large;
+    border-radius: 10px;
+}
+.from
+{
+    display: flex;
+    flex-direction: row;
+}
+.to
+{
+    display: flex;
+    flex-direction: row;
+}
+.split
+{
+        font-weight:bolder; 
+}
+.seats
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+.seat
+{
+    border-color: black;
+    border-width: 2px;
+    border-radius: 10px;
+    border-style:solid;
+    width: 150px;
+    height: 60px;
+    /* margin-bottom: 10px; */
+    
+}
+.color
+{
+    background-color: rgb(174, 173, 230)
+}
+.seat-type
+{
+    background-color: burlywood;
+    border-radius: 8px 8px 0px 0px;
+    width: 150px;
+    text-align: center;
+    margin-left: 0px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.seat-avail
+{
+    padding-top: 5px;
+    text-align: center;
+}
+.book
+{
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    width: 200px;
+}
+.book-btn
+{
+    background-color: brown;
+    color: white;
+    border-width: 2px;
+    border-style: solid;
+    border-color: burlywood;
+    border-radius: 7px;
+    cursor: pointer;
+    height: 30px;
+    width: 100px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.book-btn:hover{
+    opacity: 90%;
+}
