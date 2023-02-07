@@ -130,11 +130,13 @@ const createTrainCard = (train_detail) => {
   const seats_ele = document.createElement('div')
   seats_ele.classList.add('seats')
   seats_ele.setAttribute('id','seats')
+  // append SEATS to TRAIN
   train.appendChild(seats_ele)
   for ( var key in seats){
     createSeatCard(key,seats[key])
   }
-  // append SEATS to TRAIN
+  
+
   
 
 
@@ -162,19 +164,20 @@ const createSeatCard = (seat_class,seat_arr) => {
   seat_ele.classList.add("seat")
   // seat type
   const seat_type_ele = document.createElement('p')
-  const train_seat_type = document.createTextNode(`${key}`)
+  const train_seat_type = document.createTextNode(`${seat_class}`)
   // KEEP ID FOR MAKING CHANGES IN FARE AMT
   seat_type_ele.classList.add('seat-type')
   seat_type_ele.appendChild(train_seat_type)
   seat_ele.appendChild(seat_type_ele)
   // seat avail
   const seat_avail_ele = document.createElement('p')
-  const train_seat_avail = document.createTextNode(`Available - ${seats[key][0]}`)
+  const train_seat_avail = document.createTextNode(`Available - ${seat_arr[0]}`)
   seat_avail_ele.classList.add('seat-avail')
   seat_avail_ele.appendChild(train_seat_avail)
   seat_ele.appendChild(seat_avail_ele)
   
   // add to seats
+  const seats_ele = document.getElementById('seats')
   seats_ele.appendChild(seat_ele)
 }
 
