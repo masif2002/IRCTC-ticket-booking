@@ -2,7 +2,6 @@ $('.seat').click(function() {
     $(this).toggleClass('color') // add class to clicked element
       .siblings() // get siblings
       .removeClass('color'); // remove class from sibling elements 
-<<<<<<< HEAD
   });
 
 const createTrainCard = (train_detail) => {
@@ -233,6 +232,3 @@ window.onload = () => {
   //write your code here
   createTrains()
 }
-=======
-  });
->>>>>>> 97cb959753a2bd5232cfda88ca997817100201f5
