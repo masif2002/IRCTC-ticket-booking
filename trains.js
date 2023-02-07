@@ -133,7 +133,27 @@ const createTrainCard = (train_detail) => {
   // append SEATS to TRAIN
   train.appendChild(seats_ele)
   for ( var key in seats){
-    createSeatCard(key,seats[key])
+    // createSeatCard(key,seats[key])
+    // seat div
+    const seat_ele = document.createElement('div')
+    seat_ele.classList.add("seat")
+    seat_ele.setAttribute('id','seat')
+    // seat type
+    const seat_type_ele = document.createElement('p')
+    const train_seat_type = document.createTextNode(`${key}`)
+    // KEEP ID FOR MAKING CHANGES IN FARE AMT
+    seat_type_ele.classList.add('seat-type')
+    seat_type_ele.appendChild(train_seat_type)
+    seat_ele.appendChild(seat_type_ele)
+    // seat avail
+    const seat_avail_ele = document.createElement('p')
+    const train_seat_avail = document.createTextNode(`Available - ${seats[key][0]}`)
+    seat_avail_ele.classList.add('seat-avail')
+    seat_avail_ele.appendChild(train_seat_avail)
+    seat_ele.appendChild(seat_avail_ele)
+    
+    // add to seats
+    seats_ele.appendChild(seat_ele)
   }
   
 
@@ -141,12 +161,20 @@ const createTrainCard = (train_detail) => {
 
 
   // book now
-  const book_ele = document.createElement('a')
+  const book_ele = document.createElement('div')
   book_ele.classList.add("book")
+  // book-btn
+  const book_btn = document.createElement('a')
+  book_btn.classList.add('book-btn')
   var linkText = document.createTextNode("Book Now");
-  book_ele.appendChild(linkText);
-  book_ele.title = "Book now";
-  book_ele.href = "";
+  book_btn.appendChild(linkText);
+  book_btn.title = "Book now";
+  book_btn.href = "/";
+  book_ele.appendChild(book_btn)
+  // price
+  const tic_fare_ele = document.createElement('p')
+  tic_fare_ele.classList.add('tic_price')
+  tic_fare_ele.setAttribute('id','fare')
   // PRICE NEED TO ADD
   train.appendChild(book_ele)
 
@@ -158,30 +186,6 @@ const createTrainCard = (train_detail) => {
 
 }
 
-const createSeatCard = (seat_class,seat_arr) => {
-  // seat div
-  const seat_ele = document.createElement('div')
-  seat_ele.classList.add("seat")
-  // seat type
-  const seat_type_ele = document.createElement('p')
-  const train_seat_type = document.createTextNode(`${seat_class}`)
-  // KEEP ID FOR MAKING CHANGES IN FARE AMT
-  seat_type_ele.classList.add('seat-type')
-  seat_type_ele.appendChild(train_seat_type)
-  seat_ele.appendChild(seat_type_ele)
-  // seat avail
-  const seat_avail_ele = document.createElement('p')
-  const train_seat_avail = document.createTextNode(`Available - ${seat_arr[0]}`)
-  seat_avail_ele.classList.add('seat-avail')
-  seat_avail_ele.appendChild(train_seat_avail)
-  seat_ele.appendChild(seat_avail_ele)
-  
-  // add to seats
-  const seats_ele = document.getElementById('seats')
-  seats_ele.appendChild(seat_ele)
-}
-
-
 const createTrains = () => {
 
 
@@ -192,28 +196,28 @@ const createTrains = () => {
             "AC2 Tier": [200,150],
             "AC3 Tier": [200,150]
         },
-        "duration": "4 7:4:2",
+        "duration": "7:40",
         "enddate": "2023-01-20",
         "endtime": "16:08:02",
         "startdate": "2023-01-15",
         "starttime": "09:04:00",
         "trainfrom": "CBE",
         "trainid": 1,
-        "trainname": "MGR",
+        "trainname": "KOVAI EXPRESS",
         "trainto": "CHENNAI"
     },
     {
         "class": {
             "AC1 Tier": [200,150]
         },
-        "duration": "4 7:4:2",
+        "duration": "7:40",
         "enddate": "2023-01-20",
         "endtime": "16:08:02",
         "startdate": "2023-01-15",
         "starttime": "09:04:00",
         "trainfrom": "CBE",
         "trainid": 2, 
-        "trainname": "MGRS",
+        "trainname": "CHENNAI EXPRESS",
         "trainto": "CHENNAI"
     }
   ]
@@ -221,6 +225,7 @@ const createTrains = () => {
   var trains = document.createElement('div')
   trains.classList.add('trains')
   trains.setAttribute('id','trains')
+  document.body.appendChild(trains)
   console.log(trains)
   var no_of_trains = train_detail.length
   for (let i = 0; i < no_of_trains; i++) {
