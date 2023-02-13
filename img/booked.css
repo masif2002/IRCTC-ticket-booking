@@ -1,0 +1,225 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-image: linear-gradient(to bottom right,rgb(49 46 129), black);
+    background-repeat: no-repeat ;
+    background-size: cover;
+    height: 100%;
+    padding-top: 140px;
+}
+
+html{
+    background-color: black;
+}
+
+a {
+    text-decoration: none;
+}
+
+.footer-item {
+    color: black;
+    font-size: large;  
+}
+
+.footer-item:hover {
+    color: rgb(49 46 129);
+    opacity: 90%;
+    cursor: pointer;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+footer {
+    background-color: white;
+    margin-bottom: 0;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    column-gap: 10px;
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    background-color: white;
+    height: 1000px;
+    width: 2000px;
+    margin: auto;
+    transform: translate(-31%, 5%);
+    z-index: 10;
+    /* background-image: url('img/track.webp');
+    background-repeat: repeat;
+    background-image: opac; */
+}
+
+.flex, .input-container {
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    column-gap: 15px;
+}
+
+.heading {
+    font-size: 50px;
+}
+
+.relative {
+    position: relative;
+}
+
+.item {
+    color: black;
+    /* padding: 10px;   */
+    margin-left: 40px;
+}
+
+.item:hover {
+    border-bottom: 0px;
+    opacity: 65%;
+    cursor: pointer;
+}
+
+.navbar  {
+    background-color: white;
+    border: 2px solid rgb(226 232 240);
+    border-radius: 0px 0px 10px 10px;
+    border-top: none;
+    position: fixed;
+    top: 0;
+    left: 10%;
+    right: 10%;
+    font-size: 1.125rem; 
+    line-height: 1.75rem;
+    z-index: 500;
+    padding: 15px 0px;
+    height: 70px;
+}
+
+.nav-items  {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: auto 0px;
+    align-items: center;
+}
+
+.logo {
+    margin-bottom: -15px;
+}
+
+.btn {
+    background-color: rgb(49 46 129);
+    color: white;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(49 46 129);
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 1.125rem; 
+    line-height: 1.75rem;
+    height: 30px;
+} 
+
+.btn:hover {
+    opacity: 90%;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 50px auto;
+}
+
+.login-btn  {
+    width: 55px;
+    padding-left: 10px;
+    margin-left: 70px;
+}
+
+.register-btn  {
+    width: 85px;
+    padding-left: 10px;
+    margin-left: 30px;
+}
+
+/*-------status------------*/
+
+.status-head {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    /* top and bottom | left and right */
+    margin: 1rem auto;
+    width: 20rem;
+    font-size: large;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    height: 3rem;
+    align-items: center;
+}
+
+.status-container {
+    padding: 1rem;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px 2px;
+    min-height: 20rem;
+    min-width: 20rem;
+    max-width: 60%;
+    max-height: 60%;
+    margin: auto;
+    background-color: white;
+    border-radius: 1rem;
+}
+
+.inside-status {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /*border: 1px solid black;*/
+    padding-left: 3rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.9rem;
+}
+
+.status-heading {
+    font-weight: 600;
+}
+
+.status-value {
+    padding-left: 1.5rem;
+}
+
+/*-------passenger part--------------*/
+#seat-container {
+    display: grid;
+    background-color: white;
+    margin: auto;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    width: 40%;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    line-height: 1.5;
+}
+
+.inside-seat {
+    display: flex;
+    flex-direction: row;
+    font-size: 1rem;
+}
+
+
+@keyframes shake {
+    /* height: 100vw; */
+    0% {transform: translate(0%, 0%);}
+    20% {transform: translate(-5%, 0%);}
+    40% {transform: translate(5%, 0%);}
+    60% {transform: translate(-5%, 0%);}
+    80% {transform: translate(5%, 0%);}
+    100% {transform: translate(0%, 0%);}    
+}
