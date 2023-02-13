@@ -45,4 +45,5 @@ const displayErrorMessage = (message) => {
 }
 
 const submit = document.getElementById('submit');
+// console.log(submit)
 submit.addEventListener('click', getData)
