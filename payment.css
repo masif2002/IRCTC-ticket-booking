@@ -1,0 +1,163 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-image: linear-gradient(to bottom right,rgb(49 46 129), black);
+    background-repeat: no-repeat ;
+    background-size: cover;
+    height: 100vh;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    cursor: pointer;
+}
+
+.navbar 
+{
+    background-color: white;
+    border: 2px solid rgb(226 232 240);
+    border-radius: 0px 0px 20px 20px;
+    border-top: none;
+    position: fixed;
+    top: 0;
+    left: 10%;
+    right: 10%;
+    font-size: 1.125rem; 
+    line-height: 1.75rem;
+    z-index: 100;
+    padding: 15px 0px;
+    height: 70px;
+}
+.nav-items 
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: auto 0px;
+    align-items: center;
+}
+
+.logo
+{
+    margin-right: 60px;
+    margin-left: 60px;
+    display: flex;
+    justify-content: center;
+}
+
+.items
+{
+    justify-content: space-evenly;
+    display: flex;
+    width: 600px;
+
+}
+.item
+{
+    color: black;
+    
+}
+
+.item:hover {
+    border-bottom: 0px;
+    opacity: 75%;
+    cursor: pointer;
+}
+
+.nav-btn
+{
+    display: flex;
+    justify-content: space-evenly;
+    width: 200px;
+}
+
+.container {
+    background-color: white;
+    margin-top : 8rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    height: 50%;
+    border-radius: 1rem;
+    text-align: center;
+}
+
+.heading {
+    margin: auto;
+    text-align: center;
+    padding-top: 1rem;
+}
+
+.drop-down {
+    margin-top: 2rem;
+    width: 50%;
+    text-align: center;
+    height: 2rem;
+    border-radius: 5px;
+    border: 2px solid black;
+    background-color: rgb(237, 242, 255);
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    /* padding: 20px 20px; */
+    flex-direction: row;
+}
+
+#btn {
+    margin-top: 20px;
+}
+
+.primary, .secondary {
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(49 46 129);
+    border-radius: 5px;
+    cursor: pointer;
+    /* margin: 2px 6px; */
+}
+
+.primary {
+    background-color: rgb(49 46 129);
+    color: white;
+    padding: 5px 22px;
+    font-size: large;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.primary:hover {
+    opacity: 85%;
+    transition-delay: 10ms;
+}
+
+
+.leftP {
+    margin-top: 1rem;
+}
+
+.rightP {
+    margin-top : 1rem;
+}
+
+.name-info {
+    display: inline-block;
+    text-align: left;
+}
+
+.to-left {
+    text-align: left;
+    margin-top: 1rem;
+    margin-left: 20px;
+}
+
+
+
