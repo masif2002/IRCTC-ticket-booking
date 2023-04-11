@@ -7,6 +7,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="payment.css">
+        <script src="https://kit.fontawesome.com/6489a2c8fd.js" crossorigin="anonymous"></script>
     </head>
     <body>
         <nav class="navbar">
@@ -20,8 +21,8 @@
             </div>
         </nav>
         <div class="container" id="container-div">
-            <h2 class="heading">Total Amount = <span id="amount"></span> Rs</h2>
-            <h2 class="heading">Choose an option for payment</h2>
+            <h3 class="heading">Total Amount = <span id="amount"></span> Rs</h3>
+            <h3 class="heading bottom-line" ><i class="fa-regular fa-credit-card"></i> Choose an option for payment <i class="fa-brands fa-google-pay fa-lg"></i></h3>
             <select class="drop-down" name="payment-method" id="payment-method">
                 <option value="credit-card">Credit card</option>
                 <option value="debit-card">Debit card</option>
@@ -30,7 +31,7 @@
             </select>
             <div class="flex" id="btn">
                 <button class="primary" name="submit" id="submit">
-                    Submit
+                    Proceed <i class="fa-solid fa-arrow-right"></i>
                 </button>
             </div>
         </div>
