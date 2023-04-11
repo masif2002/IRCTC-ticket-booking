@@ -1,3 +1,5 @@
+import { server } from './utils.js'
+
 const nextPage = () => {
     addMoveOutTransitionEffect();
 
@@ -10,8 +12,6 @@ const nextPage = () => {
 }
 
 const prevPage = () => {
-    console.log('Hi')
-
     document.getElementById('username').classList.remove('move-out-left')
     document.getElementById('username').classList.remove('move-in-right')
     document.getElementById('username').classList.add('move-in-right')
@@ -131,7 +131,7 @@ const addSubmitButton = () => {
 
 const sendFormData = () => {
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", "http://10.140.11.221:5000/user/login"); 
+    xhr.open("POST", `${server}/user/login`); 
 
     // This fires up when the connection is successful
     xhr.onload = function(event){ 

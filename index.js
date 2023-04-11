@@ -1,3 +1,5 @@
+import { server } from './utils.js'
+
 // min date fixer for calender
 var date_pick = document.getElementById("datePickerId")
 if (date_pick)
@@ -66,15 +68,18 @@ function json_serialize()
         let jsonStringObj = JSON.stringify(form_result);
         console.log(jsonStringObj);
         console.log("from+index.js "+localStorage.getItem("token"))
-        let url = "http://192.168.7.203:5000/"
+        // let url = "http://192.168.7.203:5000/"
+        const token = JSON.parse(localStorage.getItem('response')).token
 
-        fetch(url+'user/home', {
+        fetch(server+'/user/home', {
     
         method: 'POST', // or 'PUT'
         headers: {    
-            'Authorization':'Bearer '+localStorage.getItem("token"),
+            'Authorization':'Bearer '+token,
                 'Accept': 'application/json,text/plain,*/*',
-                'Content-Type': 'application/json'      
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': 'http://localhost:5501',
+                'Access-Control-Allow-Credentials': 'true'
             },
             body: jsonStringObj
     

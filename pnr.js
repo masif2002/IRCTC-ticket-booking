@@ -1,3 +1,5 @@
+import { server } from './utils.js'
+
 const getData = () => {
     const pnr = document.getElementById('pnr-no').value
     
@@ -11,13 +13,17 @@ const getData = () => {
 
 const sendJsonData = (data) => {
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", "YOUR_API_ENDPOINT"); 
+    xhr.open("POST", `${server}/pnr`); 
 
     xhr.onload = function(event){ 
-        const data = JSON.parse(xhr.response)
+        // const data = JSON.parse(xhr.response)
+        // console.log(data)
 
         if (xhr.status != 200) {
             displayErrorMessage(data.status)
+        } else {
+            localStorage.setItem('ticketConfirmation', xhr.response)
+            window.location.href = 'ticket.html'
         }
     }; 
     

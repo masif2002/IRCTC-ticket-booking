@@ -1,3 +1,5 @@
+import { server } from "./utils.js" 
+
 const displayErrorMessage = (message) => {
 
     if (document.getElementById('error-message')) { 
@@ -29,7 +31,7 @@ const confirmPassword = () => {
 
 const sendFormData = () => {
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", "YOUR_API_ENDPOINT"); 
+    xhr.open("POST", `${server}/user/signup`); 
 
     // This fires up when the connection is successful
     xhr.onload = function(event){ 
