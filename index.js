@@ -66,8 +66,7 @@ function json_serialize()
         }
         // console.log(form_result);
         let jsonStringObj = JSON.stringify(form_result);
-        console.log(jsonStringObj);
-        console.log("from+index.js "+localStorage.getItem("token"))
+        // console.log(jsonStringObj);
         // let url = "http://192.168.7.203:5000/"
         const token = JSON.parse(localStorage.getItem('response')).token
 
@@ -77,38 +76,27 @@ function json_serialize()
         headers: {    
             'Authorization':'Bearer '+token,
                 'Accept': 'application/json,text/plain,*/*',
-                'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': 'http://localhost:5501',
-                'Access-Control-Allow-Credentials': 'true'
+                'Content-Type': 'application/json',      
             },
             body: jsonStringObj
     
-        }).then((response) => response.json())
+        })
+        .then((response) => response.json())
         .then((data) => {
             
                 
-                localStorage.setItem("response",data)
+                localStorage.setItem("trainDetails",data)
                 console.log(data)
                 if(data)
-                {
-                    displayTrains(data)
+                {   
+                    alert("Data Received!")
                 }
                 else
                 {
-                    displayNoresult()
+                    alert("Data Empty!")
                 }
-                
-                // console.log(data[0]['time'])
-                // localStorage.setItem('time',data[0]['time'])
-                // window.location.href="/trains.html"
-                // var dur=document.createElement('p');
-                // dur.innerHTML='html'
 
-
-
-            }).catch((error) => {
-                console.dir('Error:', error);
-        });
+        })
     
 
 
@@ -183,11 +171,11 @@ function displayTrains(data)
         top.classList.add("bottom")
 
         let start_time = document.createElement("p")
-        train_from.innerHTML = ele["starttime"]
+        start_time.innerHTML = ele["starttime"]
         let train_from = document.createElement("p")
         train_from.innerHTML = ele["trainfrom"]
         let start_date = document.createElement("p")
-        train_from.innerHTML = ele["startdate"]
+        start_date.innerHTML = ele["startdate"]
 
         // duration
         let duration = document.createElement("p")
