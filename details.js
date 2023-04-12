@@ -1,13 +1,13 @@
-const getValue = () => {
+const getPassengerCount = () => {
     const passengers = document.getElementById('passengers')
-    return passengers.value
+    return Number(passengers.value)
 }
 
 
 const renderPassengerCards = () => {
 
     const fare = localStorage.getItem('fare')
-    var val = getValue()
+    var val = getPassengerCount()
 
     if (val > currentValue) {    
         for (let i = currentValue; i < val; i++) {
@@ -172,9 +172,44 @@ const updateFare = (value) => {
     parent.appendChild(fare) 
 }
 
+const handleSubmit = (event) => {
+    // Prevent Submit by default
+    event.preventDefault()
+
+    // Array to store details of multiple passengers
+    const passengerDetails = []
+
+    
+    const passengerCount = getPassengerCount()
+    var name = ''
+    var age = ''
+
+    // Get names and ages of all passengers
+    for (let i=1; i < passengerCount+1; i++) {
+        name = document.getElementById(`name${i}`).value
+        age = document.getElementById(`age${i}`).value
+
+        passengerDetails.push({
+            id: i,
+            name,
+            age
+        })
+    }
+
+    // Get the existing ticket details and update it with passenger details
+    const details = JSON.parse(localStorage.getItem('ticketDetails'))
+    const ticketDetails = JSON.stringify({...details, passengerCount, passengerDetails})
+
+    localStorage.setItem('ticketDetails', ticketDetails)
+
+    // Redirect to review booking details page
+    window.location.href = 'booked.html'
+}
+
 var currentValue = 1;
 
 localStorage.setItem('fare', '220')
 intializeTotalFare()
 
 document.getElementById('passengers').addEventListener('click', renderPassengerCards)
+document.getElementById('submit-btn').addEventListener('click', handleSubmit)

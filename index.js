@@ -85,15 +85,15 @@ function json_serialize()
         .then((data) => {
             
                 
-                localStorage.setItem("trainDetails",data)
-                console.log(data)
-                if(data)
-                {   
-                    alert("Data Received!")
-                }
-                else
-                {
-                    alert("Data Empty!")
+            console.log(data)
+            if(data)
+            {   
+                alert("Data Received!")
+                localStorage.setItem("trainDetails", JSON.stringify(data))
+                
+            } else {
+                
+                alert("Data Empty!")
                 }
 
         })
