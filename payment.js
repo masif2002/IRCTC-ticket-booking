@@ -13,32 +13,34 @@ let debitCardDetails = [];
 let googlePayDetails;
 
 function clearFunction() {
-  containerDiv.empty();
-  containerDiv.addClass("container-temp");
-  containerDiv.removeClass("container");
-  var heading = $("<h2>");
-  heading.text("Payment Successful");
-  
-  var tickImage = $("<img>");
-  tickImage.attr("src","img/check.png");
-  
-  tickImage.addClass("tick-image");
-  heading.addClass("heading");
-  containerDiv.append(heading);
+  window.location.href = 'thankyou.html'
 
-  var thankyou = $("<h2>");
-  thankyou.text("Thank you");
-  thankyou.addClass("thank-you");
-  var testDiv = $("<div>");
-  containerDiv.append(thankyou);
-  testDiv.append(tickImage);
-  containerDiv.append(testDiv);
+  // containerDiv.empty();
+  // containerDiv.addClass("container-temp");
+  // containerDiv.removeClass("container");
+  // var heading = $("<h2>");
+  // heading.text("Payment Successful");
+  
+  // var tickImage = $("<img>");
+  // tickImage.attr("src","img/check.png");
+  
+  // tickImage.addClass("tick-image");
+  // heading.addClass("heading");
+  // containerDiv.append(heading);
 
-  var homeButton = $("<button>");
-  homeButton.addClass("primary-home");
-  homeButton.attr("id", "home");
-  homeButton.text("Home");
-  containerDiv.append(homeButton);
+  // var thankyou = $("<h2>");
+  // thankyou.text("Thank you");
+  // thankyou.addClass("thank-you");
+  // var testDiv = $("<div>");
+  // containerDiv.append(thankyou);
+  // testDiv.append(tickImage);
+  // containerDiv.append(testDiv);
+
+  // var homeButton = $("<button>");
+  // homeButton.addClass("primary-home");
+  // homeButton.attr("id", "home");
+  // homeButton.text("View Ticket");
+  // containerDiv.append(homeButton);
 }
 
 function forGpay() {
@@ -56,10 +58,15 @@ function forGpay() {
   containerDiv.append(heading);
 
   var homeButton = $("<button>");
-  homeButton.addClass("primary-home");
+  homeButton.addClass("primary-home primary");
   homeButton.attr("id", "home");
-  homeButton.text("Home");
+  homeButton.text("OK");
   containerDiv.append(homeButton);
+
+  $("#home").click(function (e) {
+    window.location.href = 'thankyou.html'
+  })
+
 }
 
 function creditCardMethod() {
@@ -175,6 +182,7 @@ function creditCardMethod() {
     creditCardDetails.push($("#cvv").val());
     creditCardDetails.push($("#date").val());
     console.log(creditCardDetails);
+
     clearFunction();
   });
 }
@@ -321,7 +329,7 @@ function googlePayMethod() {
   var submitButton = $("<button>");
   submitButton.addClass("primary");
   submitButton.attr("id", "submit-1");
-  submitButton.text("Ok");
+  submitButton.text("Submit");
 
   div6.append(submitButton);
   containerDiv.append(div6);

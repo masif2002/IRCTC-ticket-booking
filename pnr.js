@@ -16,8 +16,8 @@ const sendJsonData = (data) => {
     xhr.open("POST", `${server}/pnr`); 
 
     xhr.onload = function(event){ 
-        // const data = JSON.parse(xhr.response)
-        // console.log(data)
+        const data = JSON.parse(xhr.response)
+        console.log(data)
 
         if (xhr.status != 200) {
             displayErrorMessage(data.status)

@@ -208,10 +208,10 @@ const insertSeatDetails = (seat_details) => {
 
 
 const booking_fun = () => {
-    const status_details = {
+    const statusDetails = {
         "date": "2023-04-25",
         "pnr": 717633351,
-        /*"seat": [
+        "seat": [
             {
                 "passengerage": "12",
                 "passengername": "bala",
@@ -226,35 +226,18 @@ const booking_fun = () => {
                 "seatno": 10,
                 "status": "Successfull"
             }
-        ],*/
+        ],
         "ticketclass": "AC1 Tier",
         "ticketstatus": "Successfull",
         "time": "09:04:00",
         "trainfrom": "CBE",
-        "trainname": "MGR",  
+        "trainname": "MGRR",  
         "trainto": "CHENNAI"
     } //const booking_fun end
 
-    const seat_details = [
-        {
-            "passengerage": "12",
-            "passengername": "bala",
-            "position": "no choice",
-            "seatno": 9,
-            "status": "Successful"
-        },
-        {
-            "passengerage": "31",
-            "passengername": "ba_",
-            "position": "no choice",
-            "seatno": 10,
-            "status": "Successful"
-        }
-    ]
-
-    // for (const key in status_details) {
-    //     console.log(`Key: ${key}; Value: ${status_details[key]}`)
-    // }
+    localStorage.setItem('bookedTicket', JSON.stringify(statusDetails))
+    const status_details = JSON.parse(localStorage.getItem('bookedTicket'))
+    const seat_details = statusDetails.seat
 
     var status_1 = document.createElement('div')
     status_1.classList.add('status-container')
@@ -281,7 +264,8 @@ const booking_fun = () => {
 
     const home_button = document.createElement('div')
     home_button.classList.add('btn')
-    home_button.textContent = "Home"
+    home_button.textContent = "OK"
+    home_button.onclick = () => window.location.href = 'index.html'
     passenger_div.appendChild(home_button)    
 }
 

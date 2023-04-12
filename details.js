@@ -203,7 +203,7 @@ const handleSubmit = (event) => {
     localStorage.setItem('ticketDetails', ticketDetails)
 
     // Redirect to review booking details page
-    window.location.href = 'booked.html'
+    window.location.href = 'payment.html'
 }
 
 var currentValue = 1;

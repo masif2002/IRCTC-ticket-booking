@@ -162,7 +162,7 @@ const displayStatus = (statusCode) => {
     }
     
     if (statusCode == 200) {
-        window.location.href = "/index.html"
+        window.location.href = "dashboard.html"
     } else {
         const newNode = document.createElement('p')
         //     console.log(res)
