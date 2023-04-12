@@ -255,7 +255,7 @@ const booking_fun = () => {
     const home_button = document.createElement('div')
     home_button.classList.add('btn')
     home_button.textContent = "OK"
-    home_button.onclick = () => window.location.href = 'index.html'
+    home_button.onclick = () => window.location.href = 'dashboard.html'
     passenger_div.appendChild(home_button)    
 }
 
