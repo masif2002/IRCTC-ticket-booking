@@ -88,13 +88,16 @@ function json_serialize()
             console.log(data)
             if(data)
             {   
-                alert("Data Received!")
-                localStorage.setItem("trainDetails", JSON.stringify(data))
-                
-            } else {
-                
-                alert("Data Empty!")
+                if (data.status) {
+                    alert(data.status)
+                } else {
+                    localStorage.setItem("trainDetails", JSON.stringify(data))
+                    window.location.href = 'trains.html'
                 }
+                    
+            } else {
+                alert("something went wrong!")
+            }
 
         })
     

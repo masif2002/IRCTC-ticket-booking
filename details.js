@@ -6,7 +6,8 @@ const getPassengerCount = () => {
 
 const renderPassengerCards = () => {
 
-    const fare = localStorage.getItem('fare')
+    const fare = JSON.parse(localStorage.getItem('ticketDetails')).trainDetails.ticketFare;
+    
     var val = getPassengerCount()
 
     if (val > currentValue) {    
@@ -140,8 +141,7 @@ const createPassengerCard = (num) => {
 }
 
 const intializeTotalFare = () => {
-    const fare = localStorage.getItem('fare');
-    // To be sent by backend
+    const fare = JSON.parse(localStorage.getItem('ticketDetails')).trainDetails.ticketFare;
 
     const div = document.createElement('div')
     div.textContent = "Total Fare: "
@@ -169,9 +169,14 @@ const updateFare = (value) => {
     const fare = document.createElement('span')
     fare.id = "amount"
     fare.textContent = `${value}`
-    parent.appendChild(fare) 
+    parent.appendChild(fare)
+    
+    var ticketDetails = JSON.parse(localStorage.getItem('ticketDetails'))
+    ticketDetails = { ...ticketDetails, 
+        totalFare: value
+    }
+    localStorage.setItem('ticketDetails', JSON.stringify(ticketDetails))   
 }
-
 const handleSubmit = (event) => {
     // Prevent Submit by default
     event.preventDefault()
@@ -208,7 +213,6 @@ const handleSubmit = (event) => {
 
 var currentValue = 1;
 
-localStorage.setItem('fare', '220')
 intializeTotalFare()
 
 document.getElementById('passengers').addEventListener('click', renderPassengerCards)

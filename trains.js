@@ -1,5 +1,5 @@
 const CreateTrainCard = (train_detail) => {
-  console.log(train_detail)
+  // console.log(train_detail)
   const name = train_detail['trainname']
   const id = train_detail['trainid']
   const st_time = train_detail['starttime']
@@ -224,13 +224,13 @@ const CreateTrainCard = (train_detail) => {
   book_btn.classList.add('book-btn')
   book_btn.classList.add('disabled')
   book_btn.title = "Book now";
-  book_btn.href = "/";
   book_ele.appendChild(book_btn)
   // tic-fare-ele
   const tic_fare_ele = document.createElement('p')  
   tic_fare_ele.classList.add('tic_price')
   tic_fare_ele.setAttribute('id','fare')
   book_ele.appendChild(tic_fare_ele);
+  book_ele.addEventListener('click', handleClick)
   train.appendChild(book_ele)
 
   
@@ -242,6 +242,11 @@ const CreateTrainCard = (train_detail) => {
   // console.log(trains)
   trains.appendChild(train)
 
+}
+
+const handleClick = () => {
+  console.log("Present sir")
+  window.location.href = 'details.html'
 }
 
 const remove_siblings_seat_color = (e) => {
@@ -278,10 +283,10 @@ const remove_all_tic_fare = () => {
 }
 
 const clear_user_selection = () => {
-  localStorage.setItem("SelectedTrainName",null)
-  localStorage.setItem("SelectedTrainId",null)
-  localStorage.setItem("SelectedSeatType",null)
-  localStorage.setItem("SelectedSeatFare",null)
+  // localStorage.setItem("SelectedTrainName",null)
+  // localStorage.setItem("SelectedTrainId",null)
+  // localStorage.setItem("SelectedSeatType",null)
+  // localStorage.setItem("SelectedSeatFare",null)
 }
 
 const add_user_selection = (train_name,train_id,selected_seat_type,selected_seat_fare) => {
@@ -289,11 +294,30 @@ const add_user_selection = (train_name,train_id,selected_seat_type,selected_seat
   console.log('ID: ',train_id)
   console.log('SEAT-TYPE: ',selected_seat_type)
   console.log('SEAT-FARE: ',selected_seat_fare)
-  localStorage.setItem("SelectedTrainName",train_name)
-  localStorage.setItem("SelectedTrainId",train_id)
-  localStorage.setItem("SelectedSeatType",selected_seat_type)
-  localStorage.setItem("SelectedSeatFare",selected_seat_fare)
+  // localStorage.setItem("SelectedTrainName",train_name)
+  // localStorage.setItem("SelectedTrainId",train_id)
+  // localStorage.setItem("SelectedSeatType",selected_seat_type)
+  // localStorage.setItem("SelectedSeatFare",selected_seat_fare)
 
+  // loop to fetch which train object is clicked
+  const trains = JSON.parse(localStorage.getItem('trainDetails'))
+  const train = trains.filter((train) => train.trainid = train_id)[0]
+  console.log(train)
+
+  const trainDetails = {
+    trainid: train_id,
+    trainname: train_name,
+    trainclass:  selected_seat_type,
+    ticketFare: selected_seat_fare,
+    type_id: train.type_id
+  }
+
+  
+  // Get the existing ticket details and update it with passenger details
+  const details = JSON.parse(localStorage.getItem('ticketDetails'))
+  const ticketDetails = JSON.stringify({...details, trainDetails})
+
+  localStorage.setItem('ticketDetails', ticketDetails)
 }
 
 
@@ -304,7 +328,7 @@ const createTrains = () => {
   // console.log(train_details)
 
   // dummy data
-  const train_details = [
+  const trainDetails = [
     {
         "class": {
             "AC1 Tier": [200,150],
@@ -337,11 +361,16 @@ const createTrains = () => {
     }
   ]
 
+  const train_details = JSON.parse(localStorage.getItem('trainDetails'))
+  // Storing type id which needs to be sent to ther server whille booking ticket
 
-  localStorage.setItem("SelectedTrainName",null)
-  localStorage.setItem("SelectedTrainId",null)
-  localStorage.setItem("SelectedSeatType",null)
-  localStorage.setItem("SelectedSeatFare",null)
+  console.log(train_details)
+
+
+  // localStorage.setItem("SelectedTrainName",null)
+  // localStorage.setItem("SelectedTrainId",null)
+  // localStorage.setItem("SelectedSeatType",null)
+  // localStorage.setItem("SelectedSeatFare",null)
 
   var trains = document.createElement('div')
   trains.classList.add('trains')

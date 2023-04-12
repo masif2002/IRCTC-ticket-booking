@@ -1,5 +1,7 @@
-let amount = 1000;
-$("#amount").text(amount);
+import { server } from './utils.js'
+
+let amount = JSON.parse(localStorage.getItem('ticketDetails')).totalFare;
+$("#amount").text(amount  || 'N/A');
 
 var containerDiv = $("#container-div");
 var line_1 = $("<div>");
@@ -13,7 +15,7 @@ let debitCardDetails = [];
 let googlePayDetails;
 
 function clearFunction() {
-  window.location.href = 'thankyou.html'
+  // window.location.href = 'thankyou.html'
 
   // containerDiv.empty();
   // containerDiv.addClass("container-temp");
@@ -64,7 +66,8 @@ function forGpay() {
   containerDiv.append(homeButton);
 
   $("#home").click(function (e) {
-    window.location.href = 'thankyou.html'
+    bookTicket()
+    // window.location.href = 'thankyou.html'
   })
 
 }
@@ -183,9 +186,51 @@ function creditCardMethod() {
     creditCardDetails.push($("#date").val());
     console.log(creditCardDetails);
 
+    bookTicket()
     clearFunction();
   });
 }
+
+const bookTicket = () => {
+
+  const { trainDetails, passengerDetails, passengerCount } = JSON.parse(localStorage.getItem('ticketDetails'))
+  console.log(trainDetails)
+  console.log(passengerDetails)
+
+  var data = {
+    passenger_details_list: passengerDetails,
+    trainid: trainDetails.trainid,
+    trainname: trainDetails.trainname,
+    trainclass: trainDetails.trainclass,
+    type_id: trainDetails.type_id,
+    passenger_count: passengerCount,
+  }
+  data = JSON.stringify(data) 
+
+  // Initate connection to server
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST", `${server}/ticket/booking`); 
+
+  xhr.onload = function(event){ 
+      const data = JSON.parse(xhr.response)
+      console.log(data)
+
+      if (xhr.status != 200) {
+          alert("Oops, something went wrong!")
+      } else {
+          localStorage.setItem('bookedTicket', JSON.stringify(data))
+          window.location.href = 'thankyou.html'
+      }
+  }; 
+  
+  var res = localStorage.getItem('response')
+  var token = JSON.parse(res).token
+  
+  xhr.setRequestHeader('Content-Type', 'application/json')
+  xhr.setRequestHeader('Authorization', token)
+  xhr.send(data);
+} 
+
 
 function debitCardMethod() {
   containerDiv.empty();
@@ -299,6 +344,8 @@ function debitCardMethod() {
     debitCardDetails.push($("#cvv").val());
     debitCardDetails.push($("#date").val());
     console.log(debitCardDetails);
+
+    bookTicket()
     clearFunction();
   });
 }

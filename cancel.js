@@ -14,7 +14,7 @@ const sendFormData = () => {
 
         if (xhr.status == 200) {
             alert(statusMessage)
-            window.location.href = 'index.html'
+            window.location.href = 'dashboard.html'
         } else {
             alert("Oops! Something went wrong!")
         }

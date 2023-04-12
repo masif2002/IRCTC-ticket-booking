@@ -158,20 +158,6 @@ const insertSeatDetails = (seat_details) => {
     seat_container_2.appendChild(seat_value_2)
     total_container.appendChild(seat_container_2)
 
-    // val-3
-    let seat_container_3 = document.createElement('div')
-    seat_container_3.classList.add('inside-seat')
-
-    let seat_content_heading_3 = document.createElement('pre')
-    seat_content_heading_3.textContent = "POSITION       : "
-
-    let seat_value_3 = document.createElement('p')
-    seat_value_3.textContent = _position
-
-    seat_container_3.appendChild(seat_content_heading_3)
-    seat_container_3.appendChild(seat_value_3)
-    total_container.appendChild(seat_container_3)
-
     // val-4
     let seat_container_4 = document.createElement('div')
     seat_container_4.classList.add('inside-seat')
@@ -233,11 +219,15 @@ const booking_fun = () => {
         "trainfrom": "CBE",
         "trainname": "MGRR",  
         "trainto": "CHENNAI"
-    } //const booking_fun end
+    } 
 
-    localStorage.setItem('bookedTicket', JSON.stringify(statusDetails))
+    const trainDetails = JSON.parse(localStorage.getItem('trainDetails'))
+
+    console.log(trainDetails)
+
     const status_details = JSON.parse(localStorage.getItem('bookedTicket'))
-    const seat_details = statusDetails.seat
+    console.log(status_details);
+    const seat_details = status_details.seat
 
     var status_1 = document.createElement('div')
     status_1.classList.add('status-container')
