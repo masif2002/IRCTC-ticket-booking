@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>IRCTC Payment</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="payment.css">
+        <script src="https://kit.fontawesome.com/6489a2c8fd.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="nav-items">
+                <img class="logo" src="img/logo.png" alt="app-logo" height="75px">
+                <div class="items">
+                    <a class="item" href="pnr.html">Check Status</a>
+                    <a class="item" href="">Cancel Train</a>
+                    <a class="item" href="">Contact Us</a>
+                </div>                    
+            </div>
+        </nav>
+        <div class="container" id="container-div">
+            <h3 class="heading">Total Amount = <span id="amount"></span> Rs</h3>
+            <h3 class="heading bottom-line" ><i class="fa-regular fa-credit-card"></i> Choose an option for payment <i class="fa-brands fa-google-pay fa-lg"></i></h3>
+            <select class="drop-down" name="payment-method" id="payment-method">
+                <option value="credit-card">Credit card</option>
+                <option value="debit-card">Debit card</option>
+                <option value="google-pay">Google Pay</option>
+                <!-- <option value="phone-pay">Phone Pay</option> -->
+            </select>
+            <div class="flex" id="btn">
+                <button class="primary" name="submit" id="submit">
+                    Proceed <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="payment.js"></script>
+    </body>
+</html>
