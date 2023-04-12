@@ -224,7 +224,7 @@ const CreateTrainCard = (train_detail) => {
   book_btn.classList.add('book-btn')
   book_btn.classList.add('disabled')
   book_btn.title = "Book now";
-  book_btn.href = "/";
+  book_btn.href = "/details.html";
   book_ele.appendChild(book_btn)
   // tic-fare-ele
   const tic_fare_ele = document.createElement('p')  
@@ -342,6 +342,7 @@ const createTrains = () => {
   localStorage.setItem("SelectedTrainId",null)
   localStorage.setItem("SelectedSeatType",null)
   localStorage.setItem("SelectedSeatFare",null)
+  localStorage.setItem("type_id",train_details['type_id'])
 
   var trains = document.createElement('div')
   trains.classList.add('trains')
