@@ -1,86 +1,125 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>PNR Status</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="pnr.css">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>PNR Status</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="pnr.css" />
+  </head>
+  <body class="relative">
+    <nav class="relative">
+      <div class="navbar">
+        <div class="nav-items">
+          <img class="logo" src="img/logo.png" alt="app-logo" height="75px" />
+          <a class="item" href="">Check Status</a>
+          <a class="item" href="">Cancel Train</a>
+          <a class="item" href="">Contact Us</a>
+          <a class="login-btn btn" href="login.html">Login</a>
+          <a class="register-btn btn" href="register.html">Register</a>
+        </div>
+      </div>
+    </nav>
 
-    </head>
-    <body class="relative">
-        <nav class="relative">
-            <div class="navbar ">
-                <div class="nav-items">
-                    <img class="logo" src="img/logo.png" alt="app-logo" height="75px">
-                    <a class="item" href="">Check Status</a>
-                    <a class="item" href="">Cancel Train</a>
-                    <a class="item" href="">Contact Us</a>
-                    <a class="login-btn btn" href="login.html">Login</a >
-                    <a class="register-btn btn"href="register.html">Register</a>
-                </div>
-            </div>
-        </nav>
+    <section class="card">
+      <div class="pnr-container">
+        <div class="flex">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="30"
+            height="30"
+            fill="currentColor"
+            class="icon"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"
+            />
+          </svg>
+          <h1>Check Status</h1>
+        </div>
 
-        <section class="card">
-            <div class="pnr-container" >
-                <div class="flex">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="icon" viewBox="0 0 16 16">
-                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-                    </svg>
-                    <h1>Check Status</h1>
-                </div>
-    
-                <div class="input-container">
-                    <input type="text" placeholder="Enter PNR number" id="pnr-no" minlength="10">
-                    <div class="btn-container">
-                        <a class="primary" id="submit" href="ticket.html">Submit</a>
-                    </div>
-                </div>
-    
-            </div>
-        </section>
+        <div class="input-container">
+          <input
+            type="text"
+            placeholder="Enter PNR number"
+            id="pnr-no"
+            minlength="10"
+          />
+          <div class="btn-container">
+            <a class="primary" id="submit" href="ticket.html">Submit</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <footer>
-            <div class="footer-container">
-                <div class="flex">
-                    <div class="flex">
-                        <a class="footer-item">About Us</a>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="4" height="4" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
-                            <circle cx="8" cy="8" r="8"/>
-                        </svg>
-                    </div>
-                    <div class="flex">
-                        <a class="footer-item">Policies</a>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="4" height="4" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
-                            <circle cx="8" cy="8" r="8"/>
-                        </svg>
-                    </div>
-                    <div class="flex">
-                        <a class="footer-item">Customer Care</a>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="4" height="4" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
-                            <circle cx="8" cy="8" r="8"/>
-                        </svg>
-                    </div>
-                    <div class="flex">
-                        <a class="footer-item">Terms & Conditions</a>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="4" height="4" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
-                            <circle cx="8" cy="8" r="8"/>
-                        </svg>
-                    </div>
-                    <div class="flex">
-                        <a class="footer-item">Enquiries</a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- <div class="copyright">
+    <footer>
+      <div class="footer-container">
+        <div class="flex">
+          <div class="flex">
+            <a class="footer-item">About Us</a>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="4"
+              height="4"
+              fill="currentColor"
+              class="bi bi-circle-fill"
+              viewBox="0 0 16 16"
+            >
+              <circle cx="8" cy="8" r="8" />
+            </svg>
+          </div>
+          <div class="flex">
+            <a class="footer-item">Policies</a>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="4"
+              height="4"
+              fill="currentColor"
+              class="bi bi-circle-fill"
+              viewBox="0 0 16 16"
+            >
+              <circle cx="8" cy="8" r="8" />
+            </svg>
+          </div>
+          <div class="flex">
+            <a class="footer-item">Customer Care</a>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="4"
+              height="4"
+              fill="currentColor"
+              class="bi bi-circle-fill"
+              viewBox="0 0 16 16"
+            >
+              <circle cx="8" cy="8" r="8" />
+            </svg>
+          </div>
+          <div class="flex">
+            <a class="footer-item">Terms & Conditions</a>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="4"
+              height="4"
+              fill="currentColor"
+              class="bi bi-circle-fill"
+              viewBox="0 0 16 16"
+            >
+              <circle cx="8" cy="8" r="8" />
+            </svg>
+          </div>
+          <div class="flex">
+            <a class="footer-item">Enquiries</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="copyright">
                 Copyright &copy; github.com/masif2002
             </div> -->
+    </footer>
 
-        </footer>
-        
-        <script src="pnr.js" type="module" async defer></script>
-    </body>
+    <script src="pnr.js" type="module" async defer></script>
+  </body>
 </html>

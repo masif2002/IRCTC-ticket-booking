@@ -4,8 +4,13 @@ html {
 }
 
 body {
-  font-family: sans-serif;
+  padding-top: 120px;
   font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+  background-image: linear-gradient(to bottom right,rgb(49 46 129), black);
+  background-repeat: no-repeat ;
+  background-size: cover;
+  height: 100vh;
 }
 
 p {
@@ -25,7 +30,7 @@ p {
 }
 
 form {
-  margin-top: 20px;
+  /* margin-top: 400px; */
   border: 0;
   width: 60vw;
   max-width: 500px;
@@ -98,3 +103,81 @@ input, textarea {
   border: 0;
 }
 
+.navbar 
+{
+    background-color: white;
+    border: 2px solid rgb(226 232 240);
+    border-radius: 0px 0px 10px 10px;
+    border-top: none;
+    position: fixed;
+    top: 0;
+    left: 10%;
+    right: 10%;
+    font-size: 1.125rem; 
+    line-height: 1.75rem;
+    z-index: 100;
+    padding: 15px 0px;
+    height: 70px;
+}
+.nav-items 
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: auto 0px;
+    align-items: center;
+}
+
+.logo
+{
+    margin-bottom: -15px;
+}
+
+.item
+{
+    color: black;
+    /* padding: 10px;   */
+    margin-left: 40px;
+}
+
+.item:hover {
+    border-bottom: 0px;
+    opacity: 65%;
+    cursor: pointer;
+}
+
+.login-btn 
+{
+    width: 55px;
+    padding-left: 10px;
+    margin-left: 70px;
+}
+
+.btn
+{
+    background-color: rgb(49 46 129);
+    color: white;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(49 46 129);
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 1.125rem; 
+    line-height: 1.75rem;
+    height: 30px;
+} 
+.btn:hover{
+    opacity: 90%;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: end;
+}
+
+.register-btn 
+{
+    width: 85px;
+    padding-left: 10px;
+    margin-left: 30px;
+}
