@@ -89,3 +89,36 @@ body {
     height: 100px;
     margin: auto;
 }
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 50px auto;
+}
+
+.flex, .input-container {
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    column-gap: 15px;
+}
+
+.footer-item {
+    color: black;
+    font-size: large;    
+}
+
+.footer-item:hover {
+    color: rgb(49 46 129);
+    opacity: 90%;
+    cursor: pointer;
+}
+
+footer {
+    background-color: white;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    column-gap: 10px;
+}
