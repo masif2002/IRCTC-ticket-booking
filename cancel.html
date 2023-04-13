@@ -4,10 +4,24 @@
     <meta charset="UTF-8">
     <title>Cancellation Page</title>
     <link rel="stylesheet" href="cancel.css" />
+    <script src="https://kit.fontawesome.com/f8140cb9d1.js" crossorigin="anonymous"></script>
   </head>
   <body>
+    <nav class="relative">
+      <div class="navbar">
+        <div class="nav-items">
+          <img class="logo" src="img/logo.png" alt="app-logo" height="75px" />
+          <a class="item" href="">Check Status</a>
+          <a class="item" href="">Cancel Train</a>
+          <a class="item" href="">Contact Us</a>
+          <a class="login-btn btn" href="login.html">Login</a>
+          <a class="register-btn btn" href="register.html">Register</a>
+        </div>
+      </div>
+    </nav>
+    
     <form id="cancel-ticket">
-      <h1 id="cancel-heading">Cancellation Form</h1>
+      <h1 id="cancel-heading"><i class="fa-solid fa-xmark fa-beat"></i> Cancellation Form</h1>
       <p>Please fill the required details</p>
       <div class="line"></div>
       <fieldset>
@@ -27,4 +41,41 @@
 
     <script src="./cancel.js" type="module"></script>
   </body>
+  <footer>
+    <div class="footer-container">
+        <div class="flex">
+            <div class="flex">
+                <a class="footer-item">About Us</a>
+                <svg xmlns="http://www.w3.org/2000/svg" width="4" height="4" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                    <circle cx="8" cy="8" r="8"/>
+                </svg>
+            </div>
+            <div class="flex">
+                <a class="footer-item">Policies</a>
+                <svg xmlns="http://www.w3.org/2000/svg" width="4" height="4" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                    <circle cx="8" cy="8" r="8"/>
+                </svg>
+            </div>
+            <div class="flex">
+                <a class="footer-item">Customer Care</a>
+                <svg xmlns="http://www.w3.org/2000/svg" width="4" height="4" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                    <circle cx="8" cy="8" r="8"/>
+                </svg>
+            </div>
+            <div class="flex">
+                <a class="footer-item">Terms & Conditions</a>
+                <svg xmlns="http://www.w3.org/2000/svg" width="4" height="4" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                    <circle cx="8" cy="8" r="8"/>
+                </svg>
+            </div>
+            <div class="flex">
+                <a class="footer-item">Enquiries</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
 </html>
