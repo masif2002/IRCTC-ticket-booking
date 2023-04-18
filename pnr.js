@@ -22,6 +22,7 @@ const sendJsonData = (data) => {
         if (xhr.status != 200) {
             displayErrorMessage(data.status)
         } else {
+            console.log(xhr.response);
             localStorage.setItem('ticketConfirmation', xhr.response)
             window.location.href = 'ticket.html'
         }
